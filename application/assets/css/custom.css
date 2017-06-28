@@ -1,0 +1,17 @@
+.greendot{
+   background-color: greenyellow;border-radius: 5px;width:10px;height:10px;position:relative;float:left;top:2px;
+}
+.userdisabled{
+   background-color: black;border-radius: 5px;width:10px;height:10px;position:relative;float:left;top:2px;
+}
+
+@media screen and (max-width:1300px) and (min-width:992px){
+   table {font-size:0.9em;}
+}
+
+.ui-selecting{
+   background-color:orange !important;
+}
+tbody{
+   cursor:default;
+}

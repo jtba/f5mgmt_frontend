@@ -1,0 +1,69 @@
+<html ng-app='clusterMgmt'>
+   <head>
+      <title>Cluster Management</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">-->
+      <!--<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.css">-->
+      <link rel="stylesheet" type="text/css" href="assets/css/slate.bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/js/angular-growl-2/angular-growl.min.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+      <script src="assets/js/jquery-2.1.4.min.js"></script>
+      <script src="assets/js/jquery-ui.min.js"></script>
+      <script src="assets/js/jquery.dataTables.min.js"></script>
+      <script src="assets/js/natural.js"></script>
+      <script src="assets/js/angular.js"></script>
+      <script src="assets/js/angular-cookies.js"></script>
+      <script src="assets/js/angular-datatables.js"></script>
+      <script src="assets/js/bootstrap.js"></script>
+      <script src="assets/js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+      <script src="assets/js/angular-growl-2/angular-growl.min.js"></script>
+      <script src="assets/js/ngSelectable.js"></script>
+
+      <!--<script src="env.js"></script> -->
+      <script src="app/app.module.js"></script>
+      <script src="app/app.services.js"></script>
+      <script src="app/app.controller.js"></script>
+      <script src="app/login/loginCtrl.js"></script>
+      <script src="app/cart/confirmCtrl.js"></script>
+
+
+
+
+   </head>
+   <body ng-controller="clusterMgmtCtrl">
+      <div class="container-fluid" ng-init="getPools('init')">
+         <img style="position:absolute;margin-left:35%;margin-right:50%;top:45%;" ng-if="!initLoaded" src="assets/images/bluesteel.gif"/>
+         <div class="row" ng-if="initLoaded">
+            <div class="col-md-4"></div>
+            <div class="col-md-3">Search All: <input type="text" ng-change="searchAll()" ng-model="globalsearch.value"/></div>
+            <div class="col-md-5">
+               <a href="javascript:;" class="btn btn-default" ng-click="disableMembers()">Disable</a>
+               <a href="javascript:;" class="btn btn-default" ng-click="enableMembers()">Enable</a>
+               <a href="javascript:;" class="btn btn-default" ng-click="getPools('refresh')">Refresh Data ({{countdown}})</a>
+               <a href="javascript:;" class="btn btn-default" ng-click="wipeCredentials()">Destroy Credentials</a>
+            </div>
+         </div>
+         <div class="row" ng-if="initLoaded">
+            <div class="col-md-4" ng-repeat="f5 in f5data track by $index">
+               <div class="h3">{{f5.f5Name}}</div>
+               <table datatable="" dt-instance="dtInstance" dt-options="dtOptions" dt-column-defs="dtColumnDef" class="table table-bordered table-condensed table-striped table-responsive">
+                  <thead style="font-size: .8em;">
+                     <tr><th><input type="checkbox" class="checkallbox" ></th><th>Pool Name</th><th>Node Name</th><th>Status</th></tr>
+                  </thead>
+                  <tbody selectable selectable-options="{filter:'tr'}" selectable-events="{selected:'selectableSelected($event,$ui)',unselected:'selectableUnselected($event,$ui)'}">
+                     <tr ng-repeat="member in f5.members track by $index" style="font-size:.7em;">
+                        <td style='width:26px;'><input class="icheckbox" type="checkbox" id="membercheckbox" ng-model='f5data[$parent.$index].members[$index].ischecked' ng-change="localMember($parent.$index,member)"></td>
+                        <td>{{member.poolName}}</td>
+                        <td>{{member.memberName}}</td>
+                        <td><div ng-class="{'greendot':member.memberStatus == 'monitor-enabled' || member.memberStatus == 'user-enabled','userdisabled':member.memberStatus == 'user-disabled'}"></div></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div growl></div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,92 @@
+[
+   {
+      "f5Name": "foobar1",
+      "members": [
+         {
+            "poolName": "mypool_pool",
+            "memberName": "member1:80",
+            "memberStatus": "enabled"
+         },
+         {
+            "poolName": "mypool_pool",
+            "memberName": "member2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "test_pool",
+            "memberName": "member1:80",
+            "memberStatus": "testing"
+         },
+         {
+            "poolName": "test_pool",
+            "memberName": "fooy2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "test_pool",
+            "memberName": "fooy3:80",
+            "memberStatus": "disabled"
+         }
+      ]
+   },
+   {
+      "f5Name": "foobar2",
+      "members": [
+         {
+            "poolName": "b_mypool_pool",
+            "memberName": "member1:80",
+            "memberStatus": "enabled"
+         },
+         {
+            "poolName": "b_mypool_pool",
+            "memberName": "member2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "b_test_pool",
+            "memberName": "member1:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "b_test_pool",
+            "memberName": "fooy2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "b_test_pool",
+            "memberName": "fooy3:80",
+            "memberStatus": "disabled"
+         }
+      ]
+   },
+   {
+      "f5Name": "foobar3",
+      "members": [
+         {
+            "poolName": "c_mypool_pool",
+            "memberName": "member1:80",
+            "memberStatus": "enabled"
+         },
+         {
+            "poolName": "c_mypool_pool",
+            "memberName": "member2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "c_test_pool",
+            "memberName": "member1:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "c_test_pool",
+            "memberName": "fooy2:80",
+            "memberStatus": "disabled"
+         },
+         {
+            "poolName": "c_test_pool",
+            "memberName": "fooy3:80",
+            "memberStatus": "disabled"
+         }
+      ]
+   }
+]

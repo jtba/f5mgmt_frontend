@@ -1,0 +1,22 @@
+<div class="modal-header">
+   <button type="button" class="close" ng-click="cancel()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+   <h4 class="modal-title">Confirmation</h4>
+</div>
+<div class="modal-body">
+   <table class="table table-condensed table-striped table-bordered">
+      <thead>
+         <tr>
+            <th>F5</th><th>Pool</th><th>Member</th>
+         </tr>
+      </thead>
+      <tbody style="font-size:.8em">
+         <tr ng-repeat="item in cart track by $index">
+            <td>{{item.f5Uri}}</td><td>{{item.poolName}}</td><td>{{item.memberName}}</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+<div class="modal-footer">
+   <button class="btn btn-primary" ng-click="submit()">{{action}}</button>
+   <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
