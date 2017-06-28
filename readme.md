@@ -1,6 +1,6 @@
 # F5 Manager Frontend Interface
 
-Having trouble managed multiple F5s? This UI was created to streamline the process of changing the state of pool members.  
+Having trouble managing multiple F5s? This UI was created to streamline the process of changing the state of pool members across multiple F5 instances. While most useful for multiple F5's, the tool still makes it easy to manage a single instance.  
 
 ![screenshot](https://github.com/jtba/f5mgmt_frontend/blob/master/docs/f5mgmt_frontend1.png)
 
