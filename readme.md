@@ -2,7 +2,7 @@
 
 Having trouble managed multiple F5s? This UI was created to streamline the process of changing the state of pool members.  
 
-![screenshot](https://github.com/jtba/f5mgmt_frontend/blob/master/docs/f5mgmt_frontend.png)
+![screenshot](https://github.com/jtba/f5mgmt_frontend/blob/master/docs/f5mgmt_frontend1.png)
 
 ## Getting Started
 
